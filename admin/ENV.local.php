@@ -2,14 +2,14 @@
 
 // INFO
 // ----------------------------
-define("SITE_NAME", "Movies");
+define("SITE_NAME", "XXXX");
 
 // DATABASE INFO
 // ----------------------------
-define("DB_HOST", "127.0.0.1");
-define("DB_USER", "root");
-define("DB_PASSWORD", "root");
-define("DB_DB", "php_mysql");
-define("DB_PORT", "8889");
+define("DB_HOST", "XXXX");
+define("DB_USER", "XXXX");
+define("DB_PASSWORD", "XXXX");
+define("DB_DB", "XXXX");
+define("DB_PORT", "XXXX");
 
 

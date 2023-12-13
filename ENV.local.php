@@ -2,14 +2,14 @@
 
 // INFO
 // ----------------------------
-define("SITE_NAME", "xxx");
+define("SITE_NAME", "XXXX");
 
 // DATABASE INFO
 // ----------------------------
-define("DB_HOST", "xxx");
-define("DB_USER", "xxx");
-define("DB_PASSWORD", "xxx");
-define("DB_DB", "xxx");
-define("DB_PORT", "xxx");
+define("DB_HOST", "XXXX");
+define("DB_USER", "XXXX");
+define("DB_PASSWORD", "XXXX");
+define("DB_DB", "XXXX");
+define("DB_PORT", "XXXX");
 
 

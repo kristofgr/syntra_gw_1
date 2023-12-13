@@ -10,16 +10,20 @@
     "build": "vite build",
     "preview": "vite preview --open --host",
     "predeploy": "npm run build",
-    "deploy": "surge ./dist frontendtesturl.surge.sh",
-    "postdeploy": "start https://frontendtesturl.surge.sh",
+    "deploy": "surge ./dist yourfrontenddomain.surge.sh",
+    "postdeploy": "start https://yourfrontenddomain.surge.sh",
     "--- BACKENDSCRIPTS": "BACKENDSCRIPTS ---",
-    "buildforbackend": "vite build -c ./vite-custom-build.js",
-    "phpserver": "php -S localhost:8888"
+    "buildforbackend": "vite build -c ./vite-custom-build.mjs",
+    "phpserver": "php -S localhost:8889"
   },
   "author": "David Verhulst",
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.69.5",
     "vite": "^5.0.6"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2"
   }
 }
