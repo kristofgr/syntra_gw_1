@@ -11,3 +11,23 @@ function connectToDB()
 
   return $db;
 }
+
+function isValidLogin(string $user, string $pass): bool|object
+{
+  $sql = "SELECT id, username, created_at
+      FROM users 
+      WHERE username=:username AND password=:password";
+
+  $stmt = connectToDB()->prepare($sql);
+  $stmt->execute([
+    "username" => $user,
+    "password" => $pass
+  ]);
+
+  $user = $stmt->fetch(PDO::FETCH_OBJ);
+
+  if (!$user)
+    return false;
+
+  return $user;
+}

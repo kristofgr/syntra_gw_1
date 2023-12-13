@@ -1,4 +1,6 @@
 <?php
+require('ENV.php');
+require('includes/db.inc.php');
 session_start();
 
 var_dump($_SESSION);
@@ -12,10 +14,10 @@ if (isset($_SESSION['uid']) && $_SESSION['username']) {
 $error = false;
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
-  // TODO: checken in DB of user + pass correct is...
-  if (($_POST['username'] == 'admin') && ($_POST['password'] == 'root')) {
-    $_SESSION['uid'] = 1;
-    $_SESSION['username'] = 'admin';
+  $user = isValidLogin($_POST['username'], $_POST['password']);
+  if ($user) {
+    $_SESSION['uid'] = $user->id;
+    $_SESSION['username'] = $user->username;
     header("Location: index.php");
     exit;
   } else {
