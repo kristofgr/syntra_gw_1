@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['uid'])) {
+    header("Location: login.php");
+    exit;
+}
+
 require('ENV.php');
 require('includes/db.inc.php');
 ?>
@@ -14,6 +21,7 @@ require('includes/db.inc.php');
 </head>
 
 <body>
+    <a href="logout.php">Log out</a>
     <h1>private admin webpage</h1>
     <button class="btn btn-primary">knop</button>
     <button class="btn btn-secondary">knop</button>
