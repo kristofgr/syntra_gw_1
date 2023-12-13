@@ -16,7 +16,9 @@ function isValidLogin(string $user, string $pass): bool|object
 {
   $sql = "SELECT id, username, created_at
       FROM users 
-      WHERE username=:username AND password=:password";
+      WHERE username=:username 
+      AND password=MD5(:password)
+      AND status=1";
 
   $stmt = connectToDB()->prepare($sql);
   $stmt->execute([

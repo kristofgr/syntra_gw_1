@@ -21,7 +21,12 @@ require('includes/db.inc.php');
 </head>
 
 <body>
-    <a href="logout.php">Log out</a>
+    <p><a href="logout.php">Log out</a></p>
+    <p>Welcome,
+        <?= $_SESSION['username']; ?>
+    </p>
+
+
     <h1>private admin webpage</h1>
     <button class="btn btn-primary">knop</button>
     <button class="btn btn-secondary">knop</button>

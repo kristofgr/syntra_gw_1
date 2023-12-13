@@ -3,9 +3,6 @@ require('ENV.php');
 require('includes/db.inc.php');
 session_start();
 
-var_dump($_SESSION);
-var_dump($_POST);
-
 if (isset($_SESSION['uid']) && $_SESSION['username']) {
   header("Location: index.php");
   exit;
