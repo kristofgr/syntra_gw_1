@@ -8,6 +8,8 @@ if (!isset($_SESSION['uid'])) {
 
 require('ENV.php');
 require('includes/db.inc.php');
+
+$products = getProducts();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +29,48 @@ require('includes/db.inc.php');
     </p>
 
 
-    <h1>private admin webpage</h1>
+    <h1>Products</h1>
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Created</th>
+                    <th scope="col">Updated</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($products as $product): ?>
+                    <tr>
+                        <th scope="row">
+                            <?= $product->id; ?>
+                        </th>
+                        <td>
+                            <?= $product->name; ?>
+                        </td>
+                        <td>
+                            <?= $product->status == 1 ? 'published' : 'unpublished'; ?>
+                        </td>
+                        <td>
+                            <?= $product->date_created; ?>
+                        </td>
+                        <td>
+                            <?= $product->date_updated ? $product->date_updated : '-'; ?>
+                        </td>
+                        <td>
+                            <?= $product->id; ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+        </table>
+    </div>
+
+
+
     <button class="btn btn-primary">knop</button>
     <button class="btn btn-secondary">knop</button>
     <button class="btn btn-primary btn-disabled">knop</button>
