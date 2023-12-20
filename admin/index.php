@@ -64,6 +64,7 @@ $products = getProducts();
                         </td>
                         <td>
                             <a href="edit.php?id=<?= $product->id; ?>">edit</a>
+                            <a href="delete.php?id=<?= $product->id; ?>">delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
