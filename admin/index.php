@@ -23,15 +23,16 @@ $products = getProducts();
 </head>
 
 <body>
-    <p><a href="logout.php">Log out</a></p>
-    <p>Welcome,
-        <?= $_SESSION['username']; ?>
-    </p>
 
-
-    <h1>Products</h1>
 
     <div class="container">
+        <p><a href="logout.php">Log out</a></p>
+        <p>Welcome,
+            <?= $_SESSION['username']; ?>
+        </p>
+
+        <h1>Products</h1>
+
         <table class="table table-striped">
             <thead>
                 <tr>
