@@ -63,7 +63,7 @@ $products = getProducts();
                             <?= $product->date_updated ? $product->date_updated : '-'; ?>
                         </td>
                         <td>
-                            <?= $product->id; ?>
+                            <a href="edit.php?id=<?= $product->id; ?>">edit</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -72,7 +72,7 @@ $products = getProducts();
 
 
 
-    <button class="btn btn-primary">knop</button>
+    <button class=" btn btn-primary">knop</button>
     <button class="btn btn-secondary">knop</button>
     <button class="btn btn-primary btn-disabled">knop</button>
     <div>
