@@ -38,6 +38,7 @@ $products = getProducts();
                 <tr>
                     <th scope="col">id</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Aantal keer favoriet</th>
                     <th scope="col">Status</th>
                     <th scope="col">Created</th>
                     <th scope="col">Updated</th>
@@ -52,6 +53,9 @@ $products = getProducts();
                         </th>
                         <td>
                             <?= $product->name; ?>
+                        </td>
+                        <td>
+                            todo...
                         </td>
                         <td>
                             <?= $product->status == 1 ? 'published' : 'unpublished'; ?>
