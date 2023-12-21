@@ -58,7 +58,7 @@ $products = getProducts($sort);
                 <tr>
                     <th scope="col">id</th>
                     <th scope="col"><a href="?sort=name">Name</a></th>
-                    <th scope="col">Aantal keer favoriet</th>
+                    <th scope="col">Image</th>
                     <th scope="col"><a href="?sort=status">Status</a></th>
                     <th scope="col"><a href="?sort=date_created">Created</a></th>
                     <th scope="col">Updated</th>
@@ -75,7 +75,7 @@ $products = getProducts($sort);
                             <?= $product->name; ?>
                         </td>
                         <td>
-                            todo...
+                            <?= $product->image; ?>
                         </td>
                         <td>
                             <?= $product->status == 1 ? 'published' : 'unpublished'; ?>

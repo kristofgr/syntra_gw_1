@@ -36,7 +36,7 @@ function isValidLogin(string $user, string $pass): bool|object
 
 function getProducts($order = 'id'): array
 {
-  $sql = "SELECT id, name, status, date_created, date_updated
+  $sql = "SELECT id, name, image, status, date_created, date_updated
       FROM products
       ORDER BY " . $order;
 
