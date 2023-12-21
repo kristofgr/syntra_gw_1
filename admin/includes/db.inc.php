@@ -54,3 +54,12 @@ function getCategories(): array
     4 => 'Wearables',
   ];
 }
+function
+
+  addProduct(array $tokens): void
+{
+  $sql = "INSERT INTO products(name, image) VALUES (:name, :image)";
+
+  $stmt = connectToDB()->prepare($sql);
+  $stmt->execute($tokens);
+}

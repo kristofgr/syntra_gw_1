@@ -39,6 +39,8 @@ $products = getProducts($sort);
 
         <h1>Products</h1>
 
+        <a href="add.php">Toevoegen</a>
+
         <form method="get" action="index.php">
             <select id="filter_category" name="filter_category">
                 <?php foreach ($categories as $key => $category): ?>
