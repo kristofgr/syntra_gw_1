@@ -33,7 +33,7 @@ if (isset($_POST['title'])) {
             $newFileName = md5(time() . $_FILES['image']['name']) . '_' . time() . '.' . $fileExtension;
             // print $_FILES['image']['tmp_name'];
             // print '<br />';
-            print $dest_path = $uploadFileDir . $newFileName;
+            $dest_path = $uploadFileDir . $newFileName;
             // exit;
 
             if (move_uploaded_file($_FILES['image']['tmp_name'], '../' . $dest_path)) {
@@ -60,12 +60,12 @@ if (isset($_POST['title'])) {
     }
 }
 
-print '<pre>';
-print_r($_POST);
-print_r($errors);
-print_r($_FILES);
+// print '<pre>';
+// print_r($_POST);
+// print_r($errors);
+// print_r($_FILES);
 
-print '</pre>';
+// print '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,7 +97,7 @@ print '</pre>';
 
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input class="form-control" type="file" name="image" id="image">
+                <input class="form-control" type="file" name="image" id="image" multiple>
             </div>
 
             <button type="submit">Opslaan</button>
