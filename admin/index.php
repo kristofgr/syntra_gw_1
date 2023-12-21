@@ -75,7 +75,7 @@ $products = getProducts($sort);
                             <?= $product->name; ?>
                         </td>
                         <td>
-                            <?= $product->image; ?>
+                            <img src="https://groepswerk1.s2.syntradeveloper.be/<?= $product->image; ?>" height="50" />
                         </td>
                         <td>
                             <?= $product->status == 1 ? 'published' : 'unpublished'; ?>
