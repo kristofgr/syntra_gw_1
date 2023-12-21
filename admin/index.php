@@ -9,7 +9,12 @@ if (!isset($_SESSION['uid'])) {
 require('ENV.php');
 require('includes/db.inc.php');
 
-$products = getProducts();
+$sort = "id";
+if (isset($_GET['sort']) && in_array($_GET['sort'], ['name', 'status', 'date_created'])) {
+    $sort = $_GET['sort'];
+}
+
+$products = getProducts($sort);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,10 +42,10 @@ $products = getProducts();
             <thead>
                 <tr>
                     <th scope="col">id</th>
-                    <th scope="col">Name</th>
+                    <th scope="col"><a href="?sort=name">Name</a></th>
                     <th scope="col">Aantal keer favoriet</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Created</th>
+                    <th scope="col"><a href="?sort=status">Status</a></th>
+                    <th scope="col"><a href="?sort=date_created">Created</a></th>
                     <th scope="col">Updated</th>
                     <th scope="col"></th>
                 </tr>

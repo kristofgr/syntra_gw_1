@@ -38,12 +38,10 @@ function getProducts($order = 'id'): array
 {
   $sql = "SELECT id, name, status, date_created, date_updated
       FROM products
-      ORDER BY :order";
+      ORDER BY " . $order;
 
   $stmt = connectToDB()->prepare($sql);
-  $stmt->execute([
-    "order" => $order
-  ]);
+  $stmt->execute();
 
   return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
