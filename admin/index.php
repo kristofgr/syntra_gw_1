@@ -14,6 +14,7 @@ if (isset($_GET['sort']) && in_array($_GET['sort'], ['name', 'status', 'date_cre
     $sort = $_GET['sort'];
 }
 
+$categories = getCategories();
 $products = getProducts($sort);
 ?>
 <!DOCTYPE html>
@@ -37,6 +38,18 @@ $products = getProducts($sort);
         </p>
 
         <h1>Products</h1>
+
+        <form method="get" action="index.php">
+            <select id="filter_category" name="filter_category">
+                <?php foreach ($categories as $key => $category): ?>
+                    <option value="<?= $key; ?>">
+                        <?= $category; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <button type="submit">filter</button>
+        </form>
+
 
         <table class="table table-striped">
             <thead>
