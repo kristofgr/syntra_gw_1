@@ -9,6 +9,7 @@ if (!isset($_SESSION['uid'])) {
 require('ENV.php');
 require('includes/db.inc.php');
 
+$categories = getCategories();
 $products = getProducts();
 ?>
 <!DOCTYPE html>
@@ -32,6 +33,18 @@ $products = getProducts();
         </p>
 
         <h1>Products</h1>
+
+        <form method="get" action="index.php">
+            <select id="filter_category" name="filter_category">
+                <?php foreach ($categories as $key => $category): ?>
+                    <option value="<?= $key; ?>">
+                        <?= $category; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <button type="submit">filter</button>
+        </form>
+
 
         <table class="table table-striped">
             <thead>

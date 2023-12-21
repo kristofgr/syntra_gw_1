@@ -47,3 +47,12 @@ function getProducts($order = 'id'): array
 
   return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
+
+function getCategories(): array
+{
+  return [
+    1 => 'Tech',
+    2 => 'Toy',
+    4 => 'Wearables',
+  ];
+}
